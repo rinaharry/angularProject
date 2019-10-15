@@ -24,7 +24,7 @@
     "angular-admin-lte": "^2.0.0",
     "angular-datatables": "^7.0.0",
     "angular2-toaster": "^7.0.0",
-    "bootstrap": "4.2.1",
+    "bootstrap": "4.3.1",
     "bootstrap-datepicker": "^1.8.0",
     "core-js": "^2.5.4",
     "datatables.net": "^1.10.19",
