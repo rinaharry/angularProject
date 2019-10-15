@@ -1,0 +1,135 @@
+<mk-box 
+    [isRemovable]="false"
+    [isCollapsable]="false">
+
+    <mk-box-header></mk-box-header>
+  
+    <mk-box-content>
+    
+        <form
+            class="form-horizontal"
+            [formGroup]="form"
+        >
+            <div class="row">
+                <div class="col-md-6">
+
+                        <fieldset>
+                        <div class="form-group" [ngClass]="{ 'has-error': !form.get('lastName').valid && form.get('lastName').touched,'has-success': form.get('lastName').valid && form.get('lastName').touched}">
+                         <label for="lastName" class="col-sm-4 control-label">lastName</label>
+                            <div class="col-sm-6">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    name="lastName"
+                                    formControlName="lastName"
+                                    >
+                            </div>
+                        </div>
+
+                        <div class="form-group" [ngClass]="{ 'has-error': !form.get('firstName').valid && form.get('firstName').touched,'has-success': form.get('firstName').valid && form.get('firstName').touched}">
+                            <label for="firstName" class="col-sm-4 control-label">firstName</label>
+                                   <div class="col-sm-6">
+                                       <input
+                                           type="text"
+                                           class="form-control"
+                                           id="firstName"
+                                           name="firstName"
+                                           formControlName="firstName"
+                                           >
+                                   </div>
+                         </div>
+
+                         <div class="form-group" [ngClass]="{ 'has-error': !form.get('adrress').valid && form.get('adrress').touched,'has-success': form.get('adrress').valid && form.get('adrress').touched}">
+                                <label for="adrress" class="col-sm-4 control-label">adrress</label>
+                                       <div class="col-sm-6">
+                                           <input
+                                               type="text"
+                                               class="form-control"
+                                               id="adrress"
+                                               name="adrress"
+                                               formControlName="adrress"
+                                               >
+                                       </div>
+                         </div>
+                         </fieldset>
+                </div>
+                
+                <div class="col-md-6">
+                        
+           
+                        <div class="form-group" [ngClass]="{ 'has-error': !form.get('email').valid && form.get('email').touched,'has-success': form.get('email').valid && form.get('email').touched}">
+                         <label for="email" class="col-sm-4 control-label">email</label>
+                            <div class="col-sm-6">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    formControlName="email"
+                                    >
+                            </div>
+                        </div>
+                   
+                        <div class="form-group" [ngClass]="{ 'has-error': !form.get('contact').valid && form.get('contact').touched,'has-success': form.get('contact').valid && form.get('contact').touched}">
+                            <label for="contact" class="col-sm-4 control-label">contact</label>
+                                   <div class="col-sm-6">
+                                       <input
+                                           type="text"
+                                           class="form-control"
+                                           id="contact"
+                                           name="contact"
+                                           formControlName="contact"
+                                           >
+                                   </div>
+                         </div>
+                       
+                        <div class="form-group" *ngIf="!userOK" [ngClass]="{ 'has-error': !form.get('password').valid && form.get('password').touched,'has-success': form.get('password').valid && form.get('password').touched}">
+                                <label for="contact" class="col-sm-4 control-label">password</label>
+                                       <div class="col-sm-6">
+                                           <input
+                                               type="password"
+                                               class="form-control"
+                                               id="password"
+                                               name="password"
+                                               formControlName="password"
+                                               >
+                                       </div>
+                        </div>
+                     
+                </div>
+
+            </div>
+            
+
+      
+            <button 
+                type="submit"
+                class="btn btn-primary pull-right btnadd "
+                [disabled]="form.invalid"
+                (click)="onSubmit()"
+                *ngIf="!userOK"
+                >
+                <i class="fa fa-check" aria-hidden="true"></i> Ajouter le collaborateur
+            </button>
+            <button *ngIf="userOK"
+            type="submit"
+            class="btn btn-primary pull-right btnadd "
+            [disabled]="form.invalid"
+            (click)="onUpdate()"
+            >
+            <i class="fa fa-check" aria-hidden="true"></i> update le collaborateur
+           </button>
+
+        </form>
+        <button
+           class="btn btn-default btnlist"
+           [routerLink]="['/dashboard/users']">
+             <i class="fa fa-arrow-left" aria-hidden="true"></i> Liste des collaborateurs
+        </button>
+    
+    </mk-box-content>
+
+    <mk-box-footer></mk-box-footer>
+
+</mk-box>

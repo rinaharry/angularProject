@@ -1,0 +1,89 @@
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+          <b>E</b>volve
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+          <p class="login-box-msg">Veuillez vous connecter</p>
+
+          <div
+            *ngIf="invalidLogin"
+            class="alert alert-danger" 
+            role="alert">
+            Matricule et/ou mot de passe invalide.
+          </div>
+
+          <form 
+            #login="ngForm" 
+            (ngSubmit)="signIn(login.value)">
+
+            <div [className]="email.touched && !email.valid ? 'form-group has-error' : 'form-group'">
+              <input
+                type="text"
+                ngModel
+                name="email"
+                id="email"
+                #email="ngModel"
+                class="form-control"
+                placeholder="email"
+                 
+                autocomplete="off"
+                required
+                autofocus>
+                <span
+                  *ngIf="email.touched && !email.valid"
+                  class="help-block">
+                    <div *ngIf="email.errors.required">
+                      Veuillez saisir votre numéro matricule.
+                    </div>
+               
+                </span>
+            </div>
+
+            <div [className]="password.touched && !password.valid ? 'form-group has-error' : 'form-group'">
+              <input
+                type="password"
+                ngModel
+                name="password"
+                id="password"
+                #password="ngModel"
+                class="form-control"
+                placeholder="Mot de passe"
+                minlength="6"
+                autocomplete="off"
+                required>
+                <span
+                  *ngIf="password.touched && !password.valid"
+                  class="help-block text-danger">
+                  <div *ngIf="password.errors.required">
+                    Veuillez saisir votre mot de passe.
+                  </div>
+                  <div *ngIf="password.errors.minlength">
+                      La longueur minimal est de {{ password.errors.minlength.requiredLength }} caractères.
+                    </div>
+                </span>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block btn-flat"
+                  [disabled]="!login.valid">
+                  <i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter
+                </button>
+              </div>
+              <!-- /.col -->
+            </div><br>
+            <div class="text-center mt-3">
+                <button routerLink= '/registre' class="btn btn-primary btn-block btn-flat">registre <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+          </form>
+         
+        </div>
+     
+        <!-- /.login-box-body -->
+      </div>
+      <!-- /.login-box -->
+</body>

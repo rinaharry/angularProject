@@ -1,0 +1,50 @@
+<ng-container *ngIf="isCustomLayout else noCustomLayout">
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-template #noCustomLayout>
+
+  <mk-layout-wrapper>
+    
+    <mk-layout-sidebar-right>
+      <app-thanks></app-thanks>
+    </mk-layout-sidebar-right>
+
+    <mk-layout-header
+      [isSidebarLeftToggle]="true"
+      [isSidebarRightToggle]="true"
+      [logoLink]="['/']">
+      <mk-layout-header-logo>
+        <b>R</b>inah
+      </mk-layout-header-logo>
+
+      <mk-layout-header-logo-mini>
+        <b>R</b>
+      </mk-layout-header-logo-mini>
+      
+      <app-top-menu></app-top-menu>
+
+    </mk-layout-header>
+
+    <mk-layout-sidebar-left >
+      <app-user-left></app-user-left>
+      <app-search-left></app-search-left>
+    </mk-layout-sidebar-left>
+
+    <mk-layout-content>
+      <router-outlet></router-outlet>
+    </mk-layout-content>
+
+    <mk-layout-footer>
+      <mk-layout-footer-left>
+        <app-footer-left></app-footer-left>
+      </mk-layout-footer-left>
+
+      <mk-layout-footer-right>
+        <app-footer-right></app-footer-right>
+      </mk-layout-footer-right>
+    </mk-layout-footer>
+
+  </mk-layout-wrapper>
+
+</ng-template>

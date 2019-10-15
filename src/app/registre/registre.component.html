@@ -1,0 +1,137 @@
+<body class="hold-transition login-page">
+    <div class="registre-box">
+ <mk-box 
+    [isRemovable]="false"
+    [isCollapsable]="false">
+
+    <mk-box-header></mk-box-header>
+  
+    <mk-box-content>
+    
+        <form
+            class="form-horizontal"
+            [formGroup]="form"
+        >
+            <div class="row">
+                <div class="col-md-6">
+
+                        <fieldset>
+                        <div class="form-group">
+                         <label for="lastName" class="col-sm-4 control-label">lastName</label>
+                            <div class="col-sm-6">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    name="lastName"
+                                    formControlName="lastName"
+                                    >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstName" class="col-sm-4 control-label">firstName</label>
+                                   <div class="col-sm-6">
+                                       <input
+                                           type="text"
+                                           class="form-control"
+                                           id="firstName"
+                                           name="firstName"
+                                           formControlName="firstName"
+                                           >
+                                   </div>
+                         </div>
+
+                         <div class="form-group">
+                                <label for="adrress" class="col-sm-4 control-label">adrress</label>
+                                       <div class="col-sm-6">
+                                           <input
+                                               type="text"
+                                               class="form-control"
+                                               id="adrress"
+                                               name="adrress"
+                                               formControlName="adrress"
+                                               >
+                                       </div>
+                         </div>
+                         </fieldset>
+                </div>
+                
+                <div class="col-md-6">
+                        
+           
+                        <div class="form-group">
+                         <label for="email" class="col-sm-4 control-label">email</label>
+                            <div class="col-sm-6">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    formControlName="email"
+                                    >
+                            </div>
+                        </div>
+                   
+                        <div class="form-group">
+                            <label for="contact" class="col-sm-4 control-label">contact</label>
+                                   <div class="col-sm-6">
+                                       <input
+                                           type="text"
+                                           class="form-control"
+                                           id="contact"
+                                           name="contact"
+                                           formControlName="contact"
+                                           >
+                                   </div>
+                         </div>
+                       
+                        <div class="form-group" >
+                                <label for="contact" class="col-sm-4 control-label">password</label>
+                                       <div class="col-sm-6">
+                                           <input
+                                               type="password"
+                                               class="form-control"
+                                               id="password"
+                                               name="password"
+                                               formControlName="password"
+                                               >
+                                       </div>
+                        </div>
+                     
+                </div>
+
+            </div>
+            
+
+            <button 
+            type="submit"
+            class="btn btn-primary pull-left btnleft "
+          
+          
+            [routerLink]="[ '/login']"
+            >
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> login
+           </button>
+            <button 
+                type="submit"
+                class="btn btn-primary pull-right btnadd "
+                [disabled]="form.invalid"
+                (click)="onSubmit()"
+              
+                >
+            registre
+            </button>
+
+
+        </form>
+      
+    
+    </mk-box-content>
+
+    <mk-box-footer></mk-box-footer>
+
+</mk-box>
+</div>
+<!-- /.login-box -->
+</body>
