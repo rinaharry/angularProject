@@ -1,4 +1,7 @@
 # dashboard 
+https://github.com/rinaharry/ApiNodejs.git
+cd ApiNodejs
+npm i 
 
 Front de l'application utilisant l'API.
 
